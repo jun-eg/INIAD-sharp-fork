@@ -22,9 +22,7 @@ const FetchSlideData = () => {
 
   if (!data) return <div>GettingData</div>
 
-  return <div>
-    <p>{`${data.year[2023].}`}</p>
-  </div>
+  return <div />
 }
 
 export default FetchSlideData
