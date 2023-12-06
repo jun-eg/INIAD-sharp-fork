@@ -1,49 +1,30 @@
-// import axios from "axios"
+import axios from "axios"
+import { useCallback, useEffect, useState } from "react"
+import type { Data } from "src/types/slideTypes"
 
-// const urls: string[] = []
+const url = `https://raw.githubusercontent.com/jun-eg/deadline-json-fork/main/data.json`
 
-// const getSlideData = (): Promise<string> => {
-//   return axios
-//     .get(
-//       "https://raw.githubusercontent.com/jun-eg/test-zip/main/data/slide.json"
-//     )
-//     .then((response) => {
-//       return response.data
-//     })
-//     .catch((error) => {
-//       console.error(error)
-//     })
-// }
+const FetchSlideData = () => {
+  const [data, setData] = useState<Data | null>(null)
 
-// type NestedObject = {
-//   [key: string]: string | NestedObject
-// }
+  const getFiledata = useCallback(async () => {
+    try {
+      const response = await axios.get<Data>(url)
+      setData(response.data)
+    } catch (error) {
+      console.error(error)
+    }
+  }, [])
 
-// const isNestedObject = (value: unknown): value is NestedObject => {
-//   return typeof value === "object" && value !== null
-// }
+  useEffect(() => {
+    getFiledata()
+  }, [getFiledata])
 
-// const findUrls = (obj: unknown) => {
-//   if (isNestedObject(obj)) {
-//     for (const key in obj) {
-//       const value = obj[key]
-//       if (isNestedObject(value)) {
-//         findUrls(value)
-//       } else if (key === "url" && typeof value === "string") {
-//         urls.push(value)
-//       }
-//     }
-//   }
-//   console.log(urls)
-// }
+  if (!data) return <div>GettingData</div>
 
-// const fetchData = async () => {
-//   try {
-//     const data = await getSlideData()
-//     findUrls(data)
-//   } catch (error) {
-//     console.error(error)
-//   }
-// }
+  return <div>
+    <p>{`${data.year[2023].}`}</p>
+  </div>
+}
 
-// fetchData()
+export default FetchSlideData
