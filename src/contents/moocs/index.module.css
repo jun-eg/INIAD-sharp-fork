@@ -7,3 +7,12 @@ body:has(.container) {
   min-height: 100dvh;
   background-color: #fdfeff;
 }
+
+.titleOfHeader {
+  padding: 10px 25px 10px 15px;
+  font-size: "12px";
+  color: #4b646f;
+  color: "#9999";
+  text-align: right;
+  background-color: #1a2226;
+}
