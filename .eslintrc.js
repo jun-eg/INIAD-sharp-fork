@@ -40,5 +40,10 @@ module.exports = {
     "max-depth": ["error", 3],
     "max-nested-callbacks": ["error", 3],
     "max-lines": ["error", 200]
-  }
+  },
+  overrides: [
+    {
+      files: ["../src/lib/tree.jquery.js"]
+    }
+  ]
 }
