@@ -1,0 +1,14 @@
+body:has(.container) {
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  min-height: 100dvh;
+  background-color: #fdfeff;
+}
+
+.toyoNetAceDlButton {
+  align-items: center;
+  background-color: aquamarine;
+}
