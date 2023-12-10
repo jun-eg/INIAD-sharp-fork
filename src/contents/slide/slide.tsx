@@ -1,6 +1,15 @@
 import axios from "axios"
+import $ from "jquery"
 import { useCallback, useEffect, useState } from "react"
 import type { Data } from "src/types/slideTypes"
+
+import "jqtree"
+
+type TreeNode = {
+  name: string
+  id: number
+  children?: TreeNode[] // `children` はオプショナルで、TreeNode型の配列
+}
 
 const testData = [
   {
@@ -12,33 +21,40 @@ const testData = [
     ]
   }
 ]
-$("#tree1").tree({
-  data: testData,
-  autoOpen: true,
-  drabAndDrop: true
-})
-
-const url = `https://raw.githubusercontent.com/jun-eg/deadline-json-fork/main/data.json`
 
 const FetchSlideData = () => {
-  const [data, setData] = useState<Data | null>(null)
+  const [data, setData] = useState<TreeNode[]>()
 
-  const getFiledata = useCallback(async () => {
-    try {
-      const response = await axios.get<Data>(url)
-      setData(response.data)
-    } catch (error) {
-      console.error(error)
-    }
-  }, [])
+  // const getFiledata = useCallback(async () => {
+  //   try {
+  //     const response = await axios.get<Data>(url)
+  //     setData(response.data)
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }, [])
+
+  const settree = () => {
+    $("#tree1").tree({
+      data: testData,
+      autoOpen: true,
+      dragAndDrop: true
+    })
+
+    setData(testData)
+  }
 
   useEffect(() => {
-    getFiledata()
-  }, [getFiledata])
+    settree()
+  }, [])
 
   if (!data) return <div>GettingData</div>
 
-  return <div />
+  return (
+    <>
+      <div id="tree1" />
+    </>
+  )
 }
 
 export default FetchSlideData
