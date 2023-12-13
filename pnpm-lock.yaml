@@ -34,9 +34,6 @@ devDependencies:
   '@types/chrome':
     specifier: 0.0.245
     version: 0.0.245
-  '@types/jquery':
-    specifier: ^3.5.29
-    version: 3.5.29
   '@types/node':
     specifier: 20.5.9
     version: 20.5.9
@@ -2901,12 +2898,6 @@ packages:
     resolution: {integrity: sha512-FD+nQWA2zJjh4L9+pFXqWOi0Hs1ryBCfI+985NjluQ1p8EYtoLvjLOKidXBtZ4/IcxDX4o8/E8qDS3540tNliw==}
     dev: false
 
-  /@types/jquery@3.5.29:
-    resolution: {integrity: sha512-oXQQC9X9MOPRrMhPHHOsXqeQDnWeCDT3PelUIg/Oy8FAbzSZtFHRjc7IpbfFVmpLtJ+UOoywpRsuO5Jxjybyeg==}
-    dependencies:
-      '@types/sizzle': 2.3.8
-    dev: true
-
   /@types/json-schema@7.0.13:
     resolution: {integrity: sha512-RbSSoHliUbnXj3ny0CNFOoxrIDV6SUGyStHsvDqosw6CkdPV8TtWGlfecuK4ToyMEAql6pzNxgCFKanovUzlgQ==}
 
@@ -2950,10 +2941,6 @@ packages:
 
   /@types/semver@7.5.3:
     resolution: {integrity: sha512-OxepLK9EuNEIPxWNME+C6WwbRAOOI2o2BaQEGzz5Lu2e4Z5eDnEo+/aVEDMIXywoJitJ7xWd641wrGLZdtwRyw==}
-    dev: true
-
-  /@types/sizzle@2.3.8:
-    resolution: {integrity: sha512-0vWLNK2D5MT9dg0iOo8GlKguPAU02QjmZitPEsXRuJXU/OGIOt9vT9Fc26wtYuavLxtO45v9PGleoL9Z0k1LHg==}
     dev: true
 
   /@types/yoga-layout@1.9.2:
