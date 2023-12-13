@@ -8,9 +8,6 @@ dependencies:
   axios:
     specifier: ^1.6.2
     version: 1.6.2
-  jqtree:
-    specifier: ^1.8.0
-    version: 1.8.0(jquery@3.7.1)
   jquery:
     specifier: ^3.7.1
     version: 3.7.1
@@ -5453,14 +5450,6 @@ packages:
   /joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
     engines: {node: '>=10'}
-    dev: false
-
-  /jqtree@1.8.0(jquery@3.7.1):
-    resolution: {integrity: sha512-3Pgi8AvILdqxG8OprfSUTukvVy+/eBn3bmTfgLi01ghx+UEIPvBXTIlJfVxE8diSCLONb1V6DDX1JvNCoMB+gg==}
-    peerDependencies:
-      jquery: ^3
-    dependencies:
-      jquery: 3.7.1
     dev: false
 
   /jquery@3.7.1:
